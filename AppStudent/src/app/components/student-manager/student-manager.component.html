@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-4">
+    <app-student-form (registered)="RegisterOnServer($event)" (registered2)=UpdateOnServer($event)  (registered3)=DeleteOnServer($event) [student]="student" >
+      
+    </app-student-form>
+  </div>
+
+  <div class="col-8">
+    <ngx-datatable class="material"
+    [rows]="StudentList"
+    [columns]="columns"
+    [loadingIndicator]="loadingIndicator"
+    [columnMode]="'force'"
+    [headerHeight]="50"
+    [footerHeight]="50"
+    [rowHeight]="'auto'"
+    [reorderable]="reorderable"
+    [limit]="10"
+    (activate)="onActivate($event)"
+    >
+    
+    </ngx-datatable>
+  </div>
+  <div class='col-8'>
+    <!--data-table></data-table>-->
+  </div>
+</div>

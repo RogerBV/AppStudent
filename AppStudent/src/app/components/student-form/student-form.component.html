@@ -1,0 +1,28 @@
+<form [formGroup]="StudentForm" novalidate autocomplete="off">
+  <div class="form-group">
+    <label>Name</label>
+    <input class="form-control" type="text" formControlName="Name">
+    <span class="error-text" *ngIf="StudentForm.get('Name').hasError('required')">
+      This field is required
+    </span>
+  </div>
+  <div class="form-group">
+    <label>Grade</label>
+    <input class="form-control" type="text" formControlName="Grade">
+    <span class="error-text" *ngIf="StudentForm.get('Grade').hasError('required')">
+        This field is required
+    </span>
+  </div>
+  <div class="form-group">
+    <label>School</label>
+    <input class="form-control" type="text" formControlName="School">
+    <span class="error-text" *ngIf="StudentForm.get('School').hasError('required')">
+        This field is required
+    </span>
+  </div>
+  <div class="row">
+    <button class="btn btn-primary col-4" type="submit" [disabled]="!StudentForm.valid" (click)="RegisterStudent()">Register</button>
+    <button class="btn btn-primary col-4" type="submit" [disabled]="!StudentForm.valid" (click)="DeleteStudent()">Delete</button>
+    <button class="btn btn-primary col-4 offset-4" (click)="CleanForm()">Cancel</button>
+</div>  
+</form>
